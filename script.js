@@ -235,15 +235,30 @@ if (filterButtons.length) {
 
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-  contactForm.addEventListener('submit', (event) => {
+  contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     const status = contactForm.querySelector('.form-status');
-    if (status) {
-      status.textContent = 'Thanks! I will respond within 24 hours.';
+    const action = contactForm.getAttribute('action');
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch(action, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      });
+      if (response.ok) {
+        if (status) status.textContent = 'Thanks! I will respond within 24 hours.';
+        contactForm.reset();
+      } else if (status) {
+        status.textContent = 'Submission failed. Please email me directly.';
+      }
+    } catch (error) {
+      if (status) status.textContent = 'Network error. Please email me instead.';
     }
-    contactForm.reset();
+
     setTimeout(() => {
       if (status) status.textContent = '';
-    }, 5000);
+    }, 6000);
   });
 }
