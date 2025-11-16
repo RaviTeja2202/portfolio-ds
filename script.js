@@ -244,8 +244,8 @@ if (contactForm) {
     try {
       const response = await fetch(action, {
         method: 'POST',
+        mode: 'cors',
         body: formData,
-        headers: { Accept: 'application/json' },
       });
       if (response.ok) {
         if (status) status.textContent = 'Thanks! I will respond within 24 hours.';
