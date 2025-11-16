@@ -232,33 +232,3 @@ filterButtons.forEach((button) => {
 if (filterButtons.length) {
   applyFilter(filterButtons[0]);
 }
-
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const status = contactForm.querySelector('.form-status');
-    const action = contactForm.getAttribute('action');
-    const formData = new FormData(contactForm);
-
-    try {
-      const response = await fetch(action, {
-        method: 'POST',
-        mode: 'cors',
-        body: formData,
-      });
-      if (response.ok) {
-        if (status) status.textContent = 'Thanks! I will respond within 24 hours.';
-        contactForm.reset();
-      } else if (status) {
-        status.textContent = 'Submission failed. Please email me directly.';
-      }
-    } catch (error) {
-      if (status) status.textContent = 'Network error. Please email me instead.';
-    }
-
-    setTimeout(() => {
-      if (status) status.textContent = '';
-    }, 6000);
-  });
-}
