@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ravi Teja Sonu · Data Analyst Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="constellation" aria-hidden="true"></canvas>
+    <div class="grid-overlay" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <nav class="nav">
+        <div class="brand">
+          <span class="brand__title">RT · Data Lab</span>
+          <span class="brand__subtitle">Insights over intuition</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#hero">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#story">Signals</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#cases">Case Studies</a></li>
+          <li><a href="#skills">Stack</a></li>
+          <li><a href="#credentials">Credentials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span>☀️</span>
+        </button>
+      </nav>
+
+      <section class="hero" id="hero">
+        <p class="eyebrow">Data Analyst · Insight Engineer</p>
+        <h1>
+          Ravi Teja Sonu <span>Chittaluri</span>
+        </h1>
+        <p class="lead">
+          I translate messy, multi-source datasets into reliable dashboards,
+          automation, and stories that drive decisions. SQL-first mindset,
+          Python-powered workflows, and a love for data governance.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="mailto:chittaluriraviteja@gmail.com"
+            >Book a discovery call</a
+          >
+          <a class="btn ghost" href="./assets/RaviTejaSonu-DA-Resume.pdf"
+            >Download resume</a
+          >
+        </div>
+        <dl class="hero-meta">
+          <div>
+            <dt>Based in</dt>
+            <dd>Hyderabad, India</dd>
+          </div>
+          <div>
+            <dt>LinkedIn</dt>
+            <dd>
+              <a href="https://www.linkedin.com/in/ravitejasonu2202" target="_blank"
+                >/ravitejasonu2202</a
+              >
+            </dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd><a href="tel:+917093697091">+91 70936 97091</a></dd>
+          </div>
+        </dl>
+        <div class="hero-insights">
+          <div class="signal-cards">
+            <article>
+              <p class="label">Dashboards shipped</p>
+              <p class="value">35+</p>
+              <p class="note">Power BI · real-time KPIs</p>
+            </article>
+            <article>
+              <p class="label">ETL pipelines</p>
+              <p class="value">22</p>
+              <p class="note">Python, Pandas, Airflow-lite</p>
+            </article>
+            <article>
+              <p class="label">Reporting lift</p>
+              <p class="value">30%</p>
+              <p class="note">SQL workload optimization</p>
+            </article>
+          </div>
+          <div class="hero-radar">
+            <p class="label">Confidence matrix</p>
+            <canvas id="heroRadial" aria-label="Skill radial chart"></canvas>
+            <ul class="hero-radar__legend">
+              <li><span class="dot dot--sql"></span>SQL & Warehousing</li>
+              <li><span class="dot dot--python"></span>Python Analytics</li>
+              <li><span class="dot dot--viz"></span>BI & Storytelling</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="panel" id="experience">
+        <header class="panel__header">
+          <div>
+            <p class="eyebrow">Impact</p>
+            <h2>Experience</h2>
+          </div>
+        </header>
+        <div class="timeline">
+          <article class="timeline__item">
+            <div class="timeline__marker"></div>
+            <header>
+              <p class="timeline__company">ZMater Technologies</p>
+              <p class="timeline__role">Data Analyst</p>
+              <p class="timeline__date">Oct 2024 – Present</p>
+            </header>
+            <ul>
+              <li>
+                Built automated SQL/Python workflows that cleansed & modeled
+                multi-source data, improving reporting efficiency by 30%.
+              </li>
+              <li>
+                Designed Power BI executive dashboards powered by refreshed ETL
+                jobs, surfacing KPI shifts in near real-time.
+              </li>
+              <li>
+                Established data governance & QA routines that guarded accuracy
+                across all stakeholder reports.
+              </li>
+            </ul>
+          </article>
+          <article class="timeline__item">
+            <div class="timeline__marker"></div>
+            <header>
+              <p class="timeline__company">Cyber_ekta</p>
+              <p class="timeline__role">Software Engineering Intern</p>
+              <p class="timeline__date">Mar 2023 – Jul 2023</p>
+            </header>
+            <ul>
+              <li>
+                Automated data extraction & reporting, cutting manual analyst
+                effort by 30%.
+              </li>
+              <li>
+                Created Power BI dashboards with live sales & engagement feeds.
+              </li>
+              <li>
+                Collaborated with cross-functional teams to deliver data-backed
+                insights with accuracy guarantees.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel story-panel" id="story">
+        <header class="panel__header">
+          <div>
+            <p class="eyebrow">Story lane</p>
+            <h2>Signals that shaped my craft</h2>
+          </div>
+        </header>
+        <div class="story-grid">
+          <article class="story-item">
+            <div>
+              <p class="story-label">Reporting latency</p>
+              <p class="story-value">↓ 32%</p>
+            </div>
+            <canvas id="storySpark-1" aria-label="Reporting latency trend"></canvas>
+            <p class="story-note">
+              Cut refresh time by rebuilding SQL views + compression strategy.
+            </p>
+          </article>
+          <article class="story-item">
+            <div>
+              <p class="story-label">Manual effort</p>
+              <p class="story-value">-40 hrs/mo</p>
+            </div>
+            <canvas id="storySpark-2" aria-label="Manual effort trend"></canvas>
+            <p class="story-note">
+              Automated extraction + scheduling via Python orchestrations.
+            </p>
+          </article>
+          <article class="story-item">
+            <div>
+              <p class="story-label">Executive engagement</p>
+              <p class="story-value">+4x</p>
+            </div>
+            <canvas id="storySpark-3" aria-label="Engagement trend"></canvas>
+            <p class="story-note">
+              Built narrative dashboards with annotation + alerting.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="projects">
+        <header class="panel__header">
+          <div>
+            <p class="eyebrow">Selected Work</p>
+            <h2>Data Projects</h2>
+          </div>
+        </header>
+        <div class="project-filter" role="toolbar" aria-label="Project filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="analytics">Analytics</button>
+          <button class="filter-btn" data-filter="automation">Automation</button>
+          <button class="filter-btn" data-filter="product">Product</button>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card" data-category="analytics">
+            <p class="project-card__tag">Computer Vision · Analytics</p>
+            <h3>License Plate Intelligence</h3>
+            <p>
+              YOLOv7 + CRNN powered detection pipeline with Urdu OCR, streaming
+              data into an analytics service for enforcement insights.
+            </p>
+            <ul>
+              <li>+15% accuracy after dataset curation & hyper tuning.</li>
+              <li>Backend analytics in Python/OpenCV/EasyOCR.</li>
+            </ul>
+            <div class="project-card__actions">
+              <a class="btn ghost" href="#">Read case study</a>
+              <a class="btn outline" href="#">View notebook</a>
+            </div>
+          </article>
+          <article class="project-card" data-category="product">
+            <p class="project-card__tag">Product Analytics</p>
+            <h3>E-commerce Intelligence Layer</h3>
+            <p>
+              React + Django commerce stack with enriched customer journeys,
+              real-time JWT auth metrics, and AWS-hosted data pods.
+            </p>
+            <ul>
+              <li>25% faster API responses post AWS + Jenkins tuning.</li>
+              <li>Embedded monitoring & anomaly alerts.</li>
+            </ul>
+            <div class="project-card__actions">
+              <a class="btn ghost" href="#">Dashboard tour</a>
+              <a class="btn outline" href="#">Source</a>
+            </div>
+          </article>
+          <article class="project-card" data-category="analytics">
+            <p class="project-card__tag">Immersive Learning</p>
+            <h3>Parliamentary Insight</h3>
+            <p>
+              Unreal Engine 5 experience capturing civic data to gamify Indian
+              parliamentary processes for students.
+            </p>
+            <ul>
+              <li>Telemetry powering difficulty & accessibility tuning.</li>
+              <li>Data flows modeled in C++ + Blueprints.</li>
+            </ul>
+            <div class="project-card__actions">
+              <a class="btn ghost" href="#">Experience</a>
+              <a class="btn outline" href="#">Design notes</a>
+            </div>
+          </article>
+          <article class="project-card" data-category="automation">
+            <p class="project-card__tag">Full Stack Analytics</p>
+            <h3>Airbnb Clone</h3>
+            <p>
+              MERN implementation capturing booking funnels, search telemetry,
+              and performance KPIs across hosts and guests.
+            </p>
+            <ul>
+              <li>GraphQL search aggregator for insight queries.</li>
+              <li>Optimistic UI & metrics instrumentation.</li>
+            </ul>
+            <div class="project-card__actions">
+              <a class="btn ghost" href="#">Product tour</a>
+              <a class="btn outline" href="#">Repo</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel case-panel" id="cases">
+        <header class="panel__header">
+          <div>
+            <p class="eyebrow">Deep dives</p>
+            <h2>Observability case studies</h2>
+          </div>
+        </header>
+        <div class="case-grid">
+          <article class="case-card">
+            <div class="case-hero">
+              <div class="case-chart" aria-hidden="true">
+                <div class="bar bar--1"></div>
+                <div class="bar bar--2"></div>
+                <div class="bar bar--3"></div>
+                <div class="bar bar--4"></div>
+              </div>
+              <p>Revenue telemetry</p>
+            </div>
+            <div class="case-body">
+              <h3>Streaming commerce cockpit</h3>
+              <p>
+                Unified sales, supply chain, and marketing feeds with a governed
+                semantic layer powering exec dashboards.
+              </p>
+              <ul>
+                <li>Unified 5+ APIs · 98% data freshness</li>
+                <li>Dynamic anomaly alerts with confidence bands</li>
+              </ul>
+            </div>
+          </article>
+          <article class="case-card">
+            <div class="case-hero">
+              <div class="case-heatmap" aria-hidden="true">
+                <span></span><span></span><span></span><span></span
+                ><span></span><span></span>
+              </div>
+              <p>People analytics</p>
+            </div>
+            <div class="case-body">
+              <h3>Engagement 360</h3>
+              <p>
+                Deployed a people insights mart blending product, survey, and CRM
+                data for HR & CX teams.
+              </p>
+              <ul>
+                <li>40 KPIs with drill-down narratives</li>
+                <li>Role-based views & governance guardrails</li>
+              </ul>
+            </div>
+          </article>
+          <article class="case-card">
+            <div class="case-hero">
+              <div class="case-line" aria-hidden="true">
+                <svg viewBox="0 0 160 60">
+                  <polyline points="0,50 30,40 60,45 90,20 120,30 150,10" />
+                </svg>
+              </div>
+              <p>Operations command</p>
+            </div>
+            <div class="case-body">
+              <h3>Fulfillment anomaly radar</h3>
+              <p>
+                Built a manufacturing dashboard capturing sensor + ERP data to
+                surface fulfillment risk in real time.
+              </p>
+              <ul>
+                <li>Predictive SLA slippage warnings</li>
+                <li>Embedded root-cause notebooks</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel data-viz-panel">
+        <header class="panel__header">
+          <div>
+            <p class="eyebrow">Live feed</p>
+            <h2>Signal Dash</h2>
+          </div>
+        </header>
+        <div class="viz-grid">
+          <div class="chart-card">
+            <p class="chart-card__label">ETL velocity (jobs/hr)</p>
+            <canvas id="velocityChart" aria-label="ETL velocity chart"></canvas>
+          </div>
+          <div class="chart-card">
+            <p class="chart-card__label">Insight latency (mins)</p>
+            <canvas id="latencyChart" aria-label="latency chart"></canvas>
+          </div>
+          <div class="metric-card">
+            <p class="label">Toolbelt</p>
+            <p class="value">
+              SQL · Python · Pandas · Power BI · Airbyte · AWS · Docker
+            </p>
+            <p class="note">
+              Focused on reproducibility, observability, and trustworthy data.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel insight-panel">
+        <header class="panel__header">
+          <div>
+            <p class="eyebrow">Insight notes</p>
+            <h2>How I think with data</h2>
+          </div>
+        </header>
+        <div class="insight-grid">
+          <article>
+            <p class="insight-label">Discovery workflow</p>
+            <pre><code>SELECT metric, window
+FROM executive_kpis
+WHERE freshness &lt;= 15
+ORDER BY anomaly_score DESC;</code></pre>
+            <p>
+              Every dashboard begins with an auditable query and alerting
+              threshold. Conversation first, chart later.
+            </p>
+          </article>
+          <article>
+            <p class="insight-label">Automation snippet</p>
+            <pre><code>with airflow.DAG('etl_quality') as dag:
+    python_task(validate_schema)
+    sql_task(rebuild_views)
+    slack.notify(status)</code></pre>
+            <p>
+              Automation isn't optional; it's the only way to guarantee trust as
+              the question volume scales.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="skills">
+        <header class="panel__header">
+          <div>
+            <p class="eyebrow">Stack</p>
+            <h2>Capabilities</h2>
+          </div>
+        </header>
+        <div class="skill-grid">
+          <article>
+            <h3>Data Foundations</h3>
+            <p>SQL, PostgreSQL, MongoDB, DBT mindset, data modeling.</p>
+          </article>
+          <article>
+            <h3>Analytics & Viz</h3>
+            <p>Power BI, Python (Pandas, NumPy, Seaborn), storytelling.</p>
+          </article>
+          <article>
+            <h3>Automation</h3>
+            <p>Python ETL, Airflow-lite schedulers, CI/CD, Jenkins.</p>
+          </article>
+          <article>
+            <h3>Engineering DNA</h3>
+            <p>Node.js, Django, REST, GraphQL, container-ready services.</p>
+          </article>
+          <article>
+            <h3>Cloud & Ops</h3>
+            <p>AWS, Docker, Terraform, observability, governance.</p>
+          </article>
+          <article>
+            <h3>Collaboration</h3>
+            <p>Stakeholder workshops, agile rituals, technical writing.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel credential-panel" id="credentials">
+        <header class="panel__header">
+          <div>
+            <p class="eyebrow">Signals</p>
+            <h2>Certifications & communities</h2>
+          </div>
+        </header>
+        <div class="credential-grid">
+          <span>AWS Data Analytics</span>
+          <span>AWS Cloud Foundations</span>
+          <span>Smart Coder · Smart Interviews</span>
+          <span>GCP Cloud Architect (IP)</span>
+          <span>HackerRank Software Engineer</span>
+          <span>AWS ML Foundations</span>
+          <span>MongoDB Node.js Developer</span>
+          <span>Kubernetes Admin Training</span>
+        </div>
+      </section>
+
+      <section class="panel" id="contact">
+        <header class="panel__header">
+          <div>
+            <p class="eyebrow">Let’s build</p>
+            <h2>Hire for your next data initiative</h2>
+          </div>
+        </header>
+        <div class="contact-card">
+          <p>
+            Whether you need to tame chaotic CSV exports or launch a full-scale
+            metrics program, I combine analyst rigor with engineering chops to
+            get you live fast without sacrificing trust.
+          </p>
+          <div class="contact-actions">
+            <a class="btn primary" href="mailto:chittaluriraviteja@gmail.com"
+              >Email Ravi Teja</a
+            >
+            <a class="btn ghost" href="https://www.linkedin.com/in/ravitejasonu2202"
+              >LinkedIn</a
+            >
+            <a class="btn outline" href="tel:+917093697091">Call directly</a>
+          </div>
+          <form class="contact-form" aria-label="Send a project brief">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Project brief</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="3"
+                placeholder="Share the problem you're solving"
+                required
+              ></textarea>
+            </div>
+            <button class="btn primary" type="submit">Send overview</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Ravi Teja Sonu. Data-forward portfolio.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
